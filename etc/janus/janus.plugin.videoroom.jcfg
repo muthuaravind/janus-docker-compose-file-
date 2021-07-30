@@ -1,0 +1,34 @@
+#
+# File automatically generated on Thu Jul 29 05:40:16 2021
+#
+
+general : 
+{
+  string_ids = "true";
+  publishers = "8";
+  bitrate = "128000";
+  bitrate_cap = "true";
+  request = "enable_recording";
+  rec_dir = "/opt/janus/share/janus/recordings/";
+  record = "true";
+};
+room-1234 : 
+{
+  description = "Demo Room";
+  secret = "adminpwd";
+  publishers = "6";
+  bitrate = "128000";
+  fir_freq = "10";
+  record = "true";
+  rec_dir = "/media/recordings";
+};
+room-5678 : 
+{
+  description = "VP9-SVC Demo Room";
+  secret = "adminpwd";
+  publishers = "6";
+  bitrate = "512000";
+  fir_freq = "10";
+  videocodec = "vp9";
+  video_svc = "true";
+};

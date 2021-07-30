@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  janus-gateway:
+          #    image: canyan/janus-gateway:latest
+    image: janusweb:latest
+          #    build:
+            #     context: . 
+    command: ["/usr/local/bin/janus", "-F", "/usr/local/etc/janus"]
+    ports:
+      - "8188:8188"
+      - "8088:8088"
+      - "8089:8089"
+      - "8889:8889"
+      - "8000:8000"
+      - "7088:7088"
+      - "7089:7089"
+      - "10000-10200:10000-10200/udp"
+
+    volumes:
+      - "./etc/janus/janus.jcfg:/usr/local/etc/janus/janus.jcfg"
+      - "./etc/media/recordings:/media/recordings"
+      - "./etc/janus/janus.plugin.videoroom.jcfg:/usr/local/etc/janus/janus.plugin.videoroom.jcfg"
+      - "./recordings:/opt/janus/share/janus/recordings"
+    restart: unless-stopped
+
